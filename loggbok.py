@@ -1,5 +1,6 @@
 system = True
 
+loggar = ["1","2","3"]
 try:
     f = open("loggar.txt", "r") #letar om loggfilen finns
     print('laddade in logg filen')
@@ -17,12 +18,16 @@ while system:
     except:
         val = 0
     if val == 1:
-        print("Visar loggar")
+        print("Visar logg")
         f = open("loggar.txt", "r") #öppnar in logg loggfilen
         print(f.read()) #skriver ut loggfilen
         f.close()
     elif val == 2:
         print("ny logg")
+        f = open("loggar.txt", "a")
+        for x in loggar:
+        f.write(x+"\n")
+        f.close()
     elif val == 3:
         print("Sparar logg")
     elif val == 4:
